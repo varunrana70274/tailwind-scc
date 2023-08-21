@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Elements Quick Start</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                fontFamily: {
+                    sans: ["Roboto", "sans-serif"],
+                    body: ["Roboto", "sans-serif"],
+                    mono: ["ui-monospace", "monospace"],
+                },
+            },
+            corePlugins: {
+                preflight: false,
+            },
+        };
+    </script>
+</head>
+
+<body>
+    <nav class="flex-no-wrap relative flex w-full items-center justify-between bg-neutral-100 py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4"
+        data-te-navbar-ref>
+        <div class="flex w-full flex-wrap items-center justify-between px-3">
+            <button
+                class="block border-0 bg-transparent px-2 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+                type="button" data-te-collapse-init data-te-target="#navbarSupportedContent1"
+                aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="[&>svg]:w-7">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+                        <path fill-rule="evenodd"
+                            d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </span>
+            </button>
+
+            <div class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+                id="navbarSupportedContent1" data-te-collapse-item>
+                <a class="mb-4 mr-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
+                    href="index.html">
+                    <img src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp" style="height: 15px"
+                        alt="" loading="lazy" />
+                </a>
+                <ul class="list-style-none mr-auto flex flex-col pl-0 lg:flex-row" data-te-navbar-nav-ref>
+                    <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
+                            href="home.html" data-te-nav-link-ref>Product</a>
+                    </li>
+                    <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                            href="orderdetail.html" data-te-nav-link-ref>Order Detail</a>
+                    </li>
+                    <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                            href="productlist.html" data-te-nav-link-ref>Projects</a>
+                    </li>
+                    <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                            href="wishlist.html" data-te-nav-link-ref>Wishlist</a>
+                    </li>
+                    <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                            href="about.html" data-te-nav-link-ref>About us</a>
+                    </li>
+                    <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                            href="sidebar.html" data-te-nav-link-ref>Sidebar</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="relative flex items-center">
+                <!-- Cart Icon -->
+                <a class="mr-4 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                    href="cart.html">
+                    <span class="[&>svg]:w-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+                            <path
+                                d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Container with two dropdown menus -->
+                <div class="relative" data-te-dropdown-ref>
+                    <!-- First dropdown trigger -->
+                    <a class="hidden-arrow mr-4 flex items-center text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                        href="#" id="dropdownMenuButton1" role="button" data-te-dropdown-toggle-ref
+                        aria-expanded="false">
+                        <!-- Dropdown trigger icon -->
+                        <span class="[&>svg]:w-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="h-5 w-5">
+                                <path fill-rule="evenodd"
+                                    d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <!-- Notification counter -->
+                        <span
+                            class="absolute -mt-2.5 ml-2 rounded-[0.37rem] bg-danger px-[0.45em] py-[0.2em] text-[0.6rem] leading-none text-white">1</span>
+                    </a>
+                    <!-- First dropdown menu -->
+                    <ul class="absolute left-auto right-0 z-[1000] float-left m-0 mt-1 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+                        aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref>
+                        <!-- First dropdown menu items -->
+                        <li>
+                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                href="#" data-te-dropdown-item-ref>Action</a>
+                        </li>
+                        <li>
+                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                href="#" data-te-dropdown-item-ref>Another action</a>
+                        </li>
+                        <li>
+                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                href="#" data-te-dropdown-item-ref>Something else here</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Second dropdown container -->
+                <div class="relative" data-te-dropdown-ref>
+                    <!-- Second dropdown trigger -->
+                    <a class="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
+                        href="#" id="dropdownMenuButton2" role="button" data-te-dropdown-toggle-ref
+                        aria-expanded="false">
+                        <!-- User avatar -->
+                        <img src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg" class="rounded-full"
+                            style="height: 25px; width: 25px" alt="" loading="lazy" />
+                    </a>
+                    <!-- Second dropdown menu -->
+                    <ul class="absolute left-auto right-0 z-[1000] float-left m-0 mt-1 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+                        aria-labelledby="dropdownMenuButton2" data-te-dropdown-menu-ref>
+                        <!-- Second dropdown menu items -->
+                        <li>
+                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                href="#" data-te-dropdown-item-ref>Action</a>
+                        </li>
+                        <li>
+                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                href="#" data-te-dropdown-item-ref>Another action</a>
+                        </li>
+                        <li>
+                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                href="#" data-te-dropdown-item-ref>Something else here</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto py-9 md:py-12 px-4 md:px-6">
+        <div
+            class="flex items-strech justify-center flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
+            <div
+                class="flex flex-col md:flex-row items-strech justify-between bg-gray-50 dark:bg-gray-800 py-6 px-6 md:py-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12">
+                <div class="flex flex-col justify-center md:w-1/2">
+                    <h1 class="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white">Best Deal</h1>
+                    <p class="text-base lg:text-xl text-gray-800 dark:text-white mt-2">Save upto <span
+                            class="font-bold">50%</span></p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end">
+                    <img src="https://i.ibb.co/J2BtZdg/Rectangle-56-1.png" alt="" class="" />
+                </div>
+            </div>
+            <div
+                class="md:w-4/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 bg-gray-50 dark:bg-gray-800 py-6 px-6 md:py-0 md:px-4 lg:px-6 flex flex-col justify-center relative">
+                <div class="flex flex-col justify-center">
+                    <h1 class="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white">Game Console</h1>
+                    <p class="text-base lg:text-xl text-gray-800 dark:text-white">Save Upto <span
+                            class="font-bold">30%</span></p>
+                </div>
+                <div class="flex justify-end md:absolute md:bottom-4 md:right-4 lg:bottom-0 lg:right-0">
+                    <img src="https://i.ibb.co/rGfP7mp/Rectangle-59-1.png" alt=""
+                        class="md:w-20 md:h-20 lg:w-full lg:h-full" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="flex justify-center items-center">
+        <div class="2xl:mx-auto 2xl:container py-12 px-4 sm:px-6 xl:px-20 2xl:px-0 w-full">
+            <div class="flex flex-col jusitfy-center items-center space-y-10">
+                <div class="flex flex-col justify-center items-center ">
+                    <h1 class="text-3xl xl:text-4xl font-semibold leading-7 xl:leading-9 text-gray-800 dark:text-white">
+                        Shop By Category</h1>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-4 md:gap-x-8 w-full">
+                    <div class="relative group flex justify-center items-center h-full w-full">
+                        <img class="object-center object-cover h-full w-full"
+                            src="https://i.ibb.co/ThPFmzv/omid-armin-m-VSb6-PFk-VXw-unsplash-1-1.png"
+                            alt="girl-image" />
+                        <button
+                            class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">Women</button>
+                        <div
+                            class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col space-y-4 md:space-y-8 mt-4 md:mt-0">
+                        <div class="relative group flex justify-center items-center h-full w-full">
+                            <img class="object-center object-cover h-full w-full"
+                                src="https://i.ibb.co/SXZvYHs/irene-kredenets-DDqx-X0-7v-KE-unsplash-1.png"
+                                alt="shoe-image" />
+                            <button
+                                class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">Shoes</button>
+                            <div
+                                class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50">
+                            </div>
+                        </div>
+                        <div class="relative group flex justify-center items-center h-full w-full">
+                            <img class="object-center object-cover h-full w-full"
+                                src="https://i.ibb.co/Hd1pVxW/louis-mornaud-Ju-6-TPKXd-Bs-unsplash-1-2.png"
+                                alt="watch-image" />
+                            <button
+                                class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">Watches</button>
+                            <div
+                                class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group justify-center items-center h-full w-full hidden lg:flex">
+                        <img class="object-center object-cover h-full w-full"
+                            src="https://i.ibb.co/PTtRBLL/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-1.png"
+                            alt="girl-image" />
+                        <button
+                            class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">Accessories</button>
+                        <div
+                            class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50">
+                        </div>
+                    </div>
+                    <div
+                        class="relative group flex justify-center items-center h-full w-full mt-4 md:hidden md:mt-8 lg:hidden">
+                        <img class="object-center object-cover h-full w-full hidden md:block"
+                            src="https://i.ibb.co/6FjW19n/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2.png"
+                            alt="girl-image" />
+                        <img class="object-center object-cover h-full w-full md:hidden"
+                            src="https://i.ibb.co/sQgHwHn/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-1.png"
+                            alt="olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2" />
+                        <button
+                            class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">Accessories</button>
+                        <div
+                            class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50">
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="relative group hidden md:flex justify-center items-center h-full w-full mt-4 md:mt-8 lg:hidden">
+                    <img class="object-center object-cover h-full w-full hidden md:block"
+                        src="https://i.ibb.co/6FjW19n/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2.png" alt="girl-image" />
+                    <img class="object-center object-cover h-full w-full sm:hidden"
+                        src="https://i.ibb.co/sQgHwHn/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-1.png"
+                        alt="olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2" />
+                    <button
+                        class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">Accessories</button>
+                    <div
+                        class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="2xl:container 2xl:mx-auto md:py-12 py-9">
+        <div
+            class="bg-gray-50 dark:bg-gray-800 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-8 md:gap-12 gap-14 lg:px-20 lg:py-12 py-10 md:px-12 px-4">
+            <!-- Delivery grid Card -->
+            <div class="">
+                <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-1-svg1.svg"
+                    alt="delivery">
+                <img class="dark:block hidden"
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-1-svg1dark.svg" alt="delivery">
+                <h3 class="text-xl leading-5 dark:text-white font-semibold text-gray-800 lg:mt-10 mt-8">Delivery</h3>
+                <p
+                    class="text-base leading-6 font-normal dark:text-gray-300 text-gray-600 mt-4 lg:w-full md:w-9/12 w-full">
+                    Free worldwide delivery over orders above $100</p>
+            </div>
+
+            <!-- customer Grid Card -->
+
+            <div class="">
+                <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-1-svg2.svg"
+                    alt="Customer Care">
+                <img class="dark:block hidden"
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-1-svg2dark.svg" alt="Customer Care">
+                <h3 class="text-xl leading-5 dark:text-white font-semibold text-gray-800 lg:mt-10 mt-8">Customer Care
+                </h3>
+                <p
+                    class="text-base leading-6 font-normal dark:text-gray-300 text-gray-600 mt-4 lg:w-full md:w-9/12 w-full">
+                    Our customer care is available 24/7 at <span
+                        class="font-semibold cursor-pointer">+495-589-509</span> and <span
+                        class="font-semibold cursor-pointer">customercare@gmail.com</span></p>
+            </div>
+
+            <!-- Recycle Grid Card -->
+
+            <div class="">
+                <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-1-svg3.svg"
+                    alt="Recycle">
+                <img class="dark:block hidden"
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-1-svg3dark.svg" alt="Recycle">
+                <h3 class="text-xl leading-5 dark:text-white font-semibold text-gray-800 lg:mt-10 mt-8">Recycle</h3>
+                <p
+                    class="text-base leading-6 font-normal dark:text-gray-300 text-gray-600 mt-4 lg:w-full md:w-9/12 w-full">
+                    All out products are 100 percent recycable</p>
+            </div>
+
+            <!-- Secure Payment Card -->
+
+            <div class="">
+                <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-1-svg4.svg"
+                    alt="Secure Payment">
+                <img class="dark:block hidden"
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-1-svg4dark.svg" alt="Secure Payment">
+                <h3 class="text-xl leading-5 dark:text-white font-semibold text-gray-800 lg:mt-10 mt-8">Secure Payment
+                </h3>
+                <p
+                    class="text-base leading-6 font-normal dark:text-gray-300 text-gray-600 mt-4 lg:w-full md:w-9/12 w-full">
+                    Transaction process has end to end encryption</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mx-auto container flex justify-center items-center py-12 px-4 sm:px-6 2xl:px-0">
+        <div class="flex flex-col lg:flex-row justify-center items-center space-y-6 lg:space-y-0">
+            <div class="w-80 sm:w-auto flex flex-col justify-start items-start">
+                <div>
+                    <p class="text-3xl xl:text-4xl font-semibold leading-9 text-gray-800 dark:text-white">Renovate your
+                        home</p>
+                </div>
+                <div class="mt-4 lg:w-4/5 xl:w-3/5">
+                    <p class="text-base leading-6 text-gray-600 dark:text-white">It is a long established fact that a
+                        reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div>
+                <div class="mt-16 w-full">
+                    <button
+                        class="px-4 bg-gray-900 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200  flex justify-between items-center w-full lg:w-72 h-14 text-white hover:bg-gray-700 focus:ring-2 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 dark:hover:bg-gray-100">
+                        <p class="text-xl font-medium leading-5 ">See More</p>
+                        <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/cta-III-svg1.svg"
+                            alt="arrow">
+                        <img class="hidden dark:block"
+                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/cta-III-svg1dark.svg" alt="arrow">
+                    </button>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col sm:flex-row jusitfy-center items-center sm:space-x-5 xl:space-x-8 space-y-4 sm:space-y-0">
+                <div class="">
+                    <img class="hidden lg:block"
+                        src="https://i.ibb.co/61TfVVW/olena-sergienko-gx-KL334b-UK4-unsplash-1.png" alt="sofa" />
+                    <img class="w-80 sm:w-auto lg:hidden"
+                        src="https://i.ibb.co/QvxmJjB/olena-sergienko-gx-KL334b-UK4-unsplash-1-1.png" alt="sofa" />
+                </div>
+                <div
+                    class="flex flex-col justify-center items-center space-y-4 sm:space-y-0 sm:space-y-5 lg:space-y-5 xl:space-y-8">
+                    <div>
+                        <img class="hidden lg:block"
+                            src="https://i.ibb.co/1MY5P3y/nirzar-pangarkar-Csw-Kf-D546-Z8-unsplash-1.png"
+                            alt="chairs" />
+                        <img class="w-80 sm:w-auto lg:hidden"
+                            src="https://i.ibb.co/r0rvcCh/behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1-1.png"
+                            alt="chairs" />
+                    </div>
+                    <div>
+                        <img class="hidden lg:block"
+                            src="https://i.ibb.co/9N7ZX2C/behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1.png"
+                            alt="chairs" />
+                        <img class="w-80 sm:w-auto lg:hidden"
+                            src="https://i.ibb.co/0BFt400/nirzar-pangarkar-Csw-Kf-D546-Z8-unsplash-2.png"
+                            alt="chairs" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="2xl:container 2xl:mx-auto">
+        <div class="lg:px-20 md:px-6 px-4 md:py-12 py-8">
+            <div>
+                <h1
+                    class="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white text-center dark:text-gray-50">
+                    Top Selling
+                </h1>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-8 md:mt-10">
+                <div class="bg-gray-50 dark:bg-gray-800 p-8">
+                    <div class="">
+                        <h2 class="text-xl text-gray-600 dark:text-white">
+                            Lounge Chair
+                        </h2>
+                        <p class="text-xl font-semibold text-gray-800 dark:text-white mt-2">
+                            $1200
+                        </p>
+                    </div>
+                    <div class="flex justify-center items-center mt-8 md:mt-24">
+                        <img class="" src="https://i.ibb.co/8403ZFZ/pexels-hormel-2762247-removebg-preview-2-1.png"
+                            alt="A chair with designed back" role="img" />
+                    </div>
+                    <div class="flex justify-end items-center space-x-2 mt-16 md:mt-32">
+                        <button aria-label="show in red color"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                            <div class="w-2.5 h-2.5 bg-red-600 border rounded-full border-gray-500"></div>
+                        </button>
+                        <button aria-label="show in white color"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                            <div class="w-2.5 h-2.5 bg-white border rounded-full border-gray-500"></div>
+                        </button>
+                        <button aria-label="show in black color"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                            <div class="w-2.5 h-2.5 bg-gray-900 border rounded-full border-gray-500"></div>
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 p-8">
+                    <div class="">
+                        <h2 class="text-xl text-gray-600 dark:text-white">
+                            Lounge Chair
+                        </h2>
+                        <p class="text-xl font-semibold text-gray-800 dark:text-white mt-2">
+                            $1200
+                        </p>
+                    </div>
+                    <div class="flex justify-center items-center mt-8 md:mt-24">
+                        <img class=""
+                            src="https://i.ibb.co/WBdnRqb/eugene-chystiakov-3ne-Swyntb-Q8-unsplash-1-removebg-preview-2-1.png"
+                            alt="A chair with wooden legs" role="img" />
+                    </div>
+                    <div class="flex justify-end items-center space-x-2 mt-8 md:mt-32">
+                        <button aria-label="show in white color"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                            <div class="w-2.5 h-2.5 bg-white border rounded-full border-gray-500"></div>
+                        </button>
+                        <button aria-label="show in black color"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                            <div class="w-2.5 h-2.5 bg-gray-900 border rounded-full border-gray-500"></div>
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 p-8">
+                    <div class="">
+                        <h2 class="text-xl text-gray-600 dark:text-white">
+                            Lounge Chair
+                        </h2>
+                        <p class="text-xl font-semibold text-gray-800 dark:text-white mt-2">
+                            $1200
+                        </p>
+                    </div>
+                    <div class="flex justify-center items-center mt-8 md:mt-24">
+                        <img class=""
+                            src="https://i.ibb.co/R2fbCvj/kari-shea-It-Mgg-D0-Egu-Y-unsplash-removebg-preview-2-1.png"
+                            alt="A sofa chair with wooden legs" role="img" />
+                    </div>
+                    <div class="flex justify-end items-center space-x-2 mt-16 md:mt-32">
+                        <button aria-label="show in green color"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                            <div class="w-2.5 h-2.5 bg-green-700 border rounded-full border-gray-500"></div>
+                        </button>
+                        <button aria-label="show in brown color"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                            <div class="w-2.5 h-2.5 bg-yellow-800 border rounded-full border-gray-500"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6 lg:gap-8 mt-4 md:mt-6 lg:mt-8">
+                <div class="bg-gray-50 dark:bg-gray-800 p-8">
+                    <div>
+                        <h2 class="text-xl leading-tight text-gray-600 dark:text-white">
+                            Sectional Sofa
+                        </h2>
+                        <p class="text-xl font-semibold text-gray-800 dark:text-white mt-2">
+                            $78900
+                        </p>
+                    </div>
+                    <div class="flex justify-center items-center mt-28 md:mt-3">
+                        <img src="https://i.ibb.co/CPdBFwZ/pexels-pixabay-276583-removebg-preview-1-1.png"
+                            alt="A large sectional sofa" role="img" />
+                    </div>
+                    <div class="flex justify-end items-center space-x-2 mt-36 md:mt-12">
+                        <button aria-label="show in yellow color"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                            <div class="w-2.5 h-2.5 bg-yellow-500 border rounded-full border-gray-500"></div>
+                        </button>
+                        <button aria-label="show in light gray color"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                            <div class="w-2.5 h-2.5 bg-gray-400 border rounded-full border-gray-500"></div>
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 p-8">
+                    <div>
+                        <h2 class="text-xl leading-tight text-gray-600 dark:text-white">
+                            Two Seater Sofa
+                        </h2>
+                        <p class="text-xl font-semibold text-gray-800 dark:text-white mt-2">
+                            $2900
+                        </p>
+                    </div>
+                    <div class="flex justify-center items-center mt-28 md:mt-1">
+                        <img src="https://i.ibb.co/238nZzf/pexels-andrea-piacquadio-3757055-removebg-preview-1-1.png"
+                            alt="A beautiful two seater sofa" role="img" />
+                    </div>
+                    <div class="flex justify-end items-center space-x-2 mt-36 md:mt-12">
+                        <button aria-label="show in black color"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                            <div class="w-2.5 h-2.5 bg-gray-900 border rounded-full border-gray-500"></div>
+                        </button>
+                        <button aria-label="show in green color"
+                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded">
+                            <div class="w-2.5 h-2.5 bg-green-700 border rounded-full border-gray-500"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lg:px-20 md:px-6 px-4 md:py-12 py-8">
+        <div class="lg:flex items-center justify-between">
+            <div class="lg:w-1/3">
+                <h1 class="text-4xl font-semibold leading-9 text-gray-800 dark:text-white">Indoor Interiors</h1>
+                <p class="text-base leading-6 mt-4 text-gray-600 dark:text-gray-100">Get inspired by our curated
+                    selection of luxiwood interiors. We hope get inspired to have luxiwood interior yourself. You’ll
+                    find tips here where you can buy a lot of cool furniture.</p>
+                <button role="button" aria-label="view catalogue"
+                    class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none mt-6 md:mt-8 text-base font-semibold leading-none text-gray-800 dark:text-white flex items-center hover:underline">
+                    View Catalogue
+                    <img class="ml-2 mt-1 dark:hidden"
+                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/feature-VI-svg1.svg" alt="arrow">
+                    <img class="ml-2 mt-1 hidden dark:block"
+                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/feature-VI-svg1dark.svg" alt="arrow">
+                </button>
+            </div>
+            <div class="lg:w-7/12 lg:mt-0 mt-8">
+                <div class="w-full h-full bg-red-200">
+                    <img src="https://i.ibb.co/cbyDY74/pexels-max-vakhtbovych-6782351-1-1.png" alt="apartment design"
+                        class="w-full sm:block hidden" />
+                    <img src="https://i.ibb.co/ZVPGjGJ/pexels-max-vakhtbovych-6782351-1.png" alt="apartment design"
+                        class="sm:hidden block w-full" />
+                </div>
+                <div
+                    class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 lg:gap-8 gap-6 lg:mt-8 md:mt-6 mt-4">
+                    <img src="https://i.ibb.co/4Jrp5TB/pexels-max-vakhtbovych-6782370-1.png" class="w-full"
+                        alt="kitchen" />
+                    <img src="https://i.ibb.co/0Jv3FSy/pexels-max-vakhtbovych-6436799-1-1.png" class="w-full"
+                        alt="sitting room" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="2xl:mx-auto 2xl:container mx-4 py-16">
+        <div class="w-full relative flex items-center justify-center">
+            <img src="https://i.ibb.co/4sYZ8gC/img-2.png" alt="dining"
+                class="w-full h-full absolute z-0 hidden xl:block" />
+            <img src="https://i.ibb.co/bbS3J9C/pexels-max-vakhtbovych-6301182-1.png" alt="dining"
+                class="w-full h-full absolute z-0 hidden sm:block xl:hidden" />
+            <img src="https://i.ibb.co/JKkzGDs/pexels-max-vakhtbovych-6301182-1.png" alt="dining"
+                class="w-full h-full absolute z-0 sm:hidden" />
+            <div
+                class="bg-gray-800 bg-opacity-80 md:my-16 lg:py-16 py-10 w-full md:mx-24 md:px-12 px-4 flex flex-col items-center justify-center relative z-40">
+                <h1 class="text-4xl font-semibold leading-9 text-white text-center">Don’t miss out!</h1>
+                <p class="text-base leading-normal text-center text-white mt-6">
+                    Subscribe to your newsletter to stay in the loop. Our newsletter is sent once in <br />
+                    a week on every friday so subscribe to get latest news and updates.
+                </p>
+                <div
+                    class="sm:border border-white flex-col sm:flex-row flex items-center lg:w-5/12 w-full mt-12 space-y-4 sm:space-y-0">
+                    <input
+                        class="border border-white sm:border-transparent text-base w-full font-medium leading-none text-white p-4 focus:outline-none bg-transparent placeholder-white"
+                        placeholder="Email Address" />
+                    <button
+                        class="focus:outline-none focus:ring-offset-2 focus:ring border border-white sm:border-transparent w-full sm:w-auto bg-white py-4 px-6 hover:bg-opacity-75">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer
+        class="bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left mt-10">
+        <div
+            class="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
+            <div class="mr-12 hidden lg:block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <div class="flex justify-center">
+                <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                </a>
+                <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                </a>
+                <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M7 11v2.4h3.97c-.16 1.029-1.2 3.02-3.97 3.02-2.39 0-4.34-1.979-4.34-4.42 0-2.44 1.95-4.42 4.34-4.42 1.36 0 2.27.58 2.79 1.08l1.9-1.83c-1.22-1.14-2.8-1.83-4.69-1.83-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.721-2.84 6.721-6.84 0-.46-.051-.81-.111-1.16h-6.61zm0 0 17 2h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z"
+                            fill-rule="evenodd" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                    </svg>
+                </a>
+                <a href="#!" class="text-neutral-600 dark:text-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main container div: holds the entire content of the footer, including four sections (Tailwind Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. -->
+        <div class="mx-6 py-10 text-center md:text-left">
+            <div class="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Tailwind Elements section -->
+                <div class="">
+                    <h6 class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="mr-3 h-4 w-4">
+                            <path
+                                d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
+                        </svg>
+                        Tailwind ELEMENTS
+                    </h6>
+                    <p>
+                        Here you can use rows and columns to organize your footer content.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                </div>
+                <!-- Products section -->
+                <div class="">
+                    <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+                        Products
+                    </h6>
+                    <p class="mb-4">
+                        <a href="#!" class="text-neutral-600 dark:text-neutral-200">Angular</a>
+                    </p>
+                    <p class="mb-4">
+                        <a href="#!" class="text-neutral-600 dark:text-neutral-200">React</a>
+                    </p>
+                    <p class="mb-4">
+                        <a href="#!" class="text-neutral-600 dark:text-neutral-200">Vue</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-neutral-600 dark:text-neutral-200">Laravel</a>
+                    </p>
+                </div>
+                <!-- Useful links section -->
+                <div class="">
+                    <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+                        Useful links
+                    </h6>
+                    <p class="mb-4">
+                        <a href="#!" class="text-neutral-600 dark:text-neutral-200">Pricing</a>
+                    </p>
+                    <p class="mb-4">
+                        <a href="#!" class="text-neutral-600 dark:text-neutral-200">Settings</a>
+                    </p>
+                    <p class="mb-4">
+                        <a href="#!" class="text-neutral-600 dark:text-neutral-200">Orders</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-neutral-600 dark:text-neutral-200">Help</a>
+                    </p>
+                </div>
+                <!-- Contact section -->
+                <div>
+                    <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+                        Contact
+                    </h6>
+                    <p class="mb-4 flex items-center justify-center md:justify-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="mr-3 h-5 w-5">
+                            <path
+                                d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+                            <path
+                                d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+                        </svg>
+                        New York, NY 10012, US
+                    </p>
+                    <p class="mb-4 flex items-center justify-center md:justify-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="mr-3 h-5 w-5">
+                            <path
+                                d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                            <path
+                                d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                        </svg>
+                        info@example.com
+                    </p>
+                    <p class="mb-4 flex items-center justify-center md:justify-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="mr-3 h-5 w-5">
+                            <path fill-rule="evenodd"
+                                d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        + 01 234 567 88
+                    </p>
+                    <p class="flex items-center justify-center md:justify-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="mr-3 h-5 w-5">
+                            <path fill-rule="evenodd"
+                                d="M7.875 1.5C6.839 1.5 6 2.34 6 3.375v2.99c-.426.053-.851.11-1.274.174-1.454.218-2.476 1.483-2.476 2.917v6.294a3 3 0 003 3h.27l-.155 1.705A1.875 1.875 0 007.232 22.5h9.536a1.875 1.875 0 001.867-2.045l-.155-1.705h.27a3 3 0 003-3V9.456c0-1.434-1.022-2.7-2.476-2.917A48.716 48.716 0 0018 6.366V3.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM16.5 6.205v-2.83A.375.375 0 0016.125 3h-8.25a.375.375 0 00-.375.375v2.83a49.353 49.353 0 019 0zm-.217 8.265c.178.018.317.16.333.337l.526 5.784a.375.375 0 01-.374.409H7.232a.375.375 0 01-.374-.409l.526-5.784a.373.373 0 01.333-.337 41.741 41.741 0 018.566 0zm.967-3.97a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H18a.75.75 0 01-.75-.75V10.5zM15 9.75a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V10.5a.75.75 0 00-.75-.75H15z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        + 01 234 567 89
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--Copyright section-->
+        <div class="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
+            <span>© 2023 Copyright:</span>
+            <a class="font-semibold text-neutral-600 dark:text-neutral-400"
+                href="https://tailwind-elements.com/">Tailwind Elements</a>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+</body>
+
+</html>
